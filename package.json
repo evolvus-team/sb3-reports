@@ -1,9 +1,14 @@
 {
   "name": "sb3-reports",
   "version": "1.0.0",
-  "description": "SB3 corruption checker",
-  "main": "fixer.js",
+  "description": "Discord bot for checking Scratch SB3 builds for possible corruption",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
   "dependencies": {
-    "@turbowarp/sb3fix": "latest"
+    "@turbowarp/sb3fix": "latest",
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.2.2"
   }
 }
