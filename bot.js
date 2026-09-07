@@ -35,13 +35,44 @@ client.once("ready", () => {
 
 client.on("messageCreate", async (message) => {
 
-    // Ignore other bots
+    // Ignore bots
     if (message.author.bot) {
         return;
     }
 
-    // Check every attachment
+    const attachments = [];
+
+    /*
+     * Normal message attachments
+     */
     for (const attachment of message.attachments.values()) {
+        attachments.push(attachment);
+    }
+
+
+    /*
+     * Forwarded message attachments
+     *
+     * Discord stores forwarded-message data in
+     * messageSnapshots rather than the normal
+     * message.attachments collection.
+     */
+    for (const snapshot of message.messageSnapshots.values()) {
+
+        if (!snapshot.attachments) {
+            continue;
+        }
+
+        for (const attachment of snapshot.attachments.values()) {
+            attachments.push(attachment);
+        }
+    }
+
+
+    /*
+     * Check all attachments
+     */
+    for (const attachment of attachments) {
 
         if (
             !attachment.name ||
