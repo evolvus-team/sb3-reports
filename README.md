@@ -38,7 +38,7 @@ Run locally:
 npm start
 ```
 
-For WispByte, use:
+For WispByte or other server, use:
 
 ```bash
 npm start
