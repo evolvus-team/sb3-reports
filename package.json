@@ -1,0 +1,9 @@
+{
+  "name": "sb3-reports",
+  "version": "1.0.0",
+  "description": "SB3 corruption checker",
+  "main": "fixer.js",
+  "dependencies": {
+    "@turbowarp/sb3fix": "latest"
+  }
+}
